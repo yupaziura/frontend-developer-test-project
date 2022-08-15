@@ -5,10 +5,16 @@ export default {
   },
   card: {
     background: '#fff',
-    border: '#ccc'
+    backgroundSelected: '#fefefe',
+    border: '#ccc',
+    borderSelected: '#aaa'
   },
   text: {
     default: '#222',
     dimmed: '#666'
+  },
+  primary: {
+    main: '#009A17',
+    contrast: '#fff'
   }
 }
