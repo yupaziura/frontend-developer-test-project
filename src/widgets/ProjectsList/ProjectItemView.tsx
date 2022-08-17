@@ -7,10 +7,11 @@ import { Text, Card, Pressable } from 'app/ds'
 export const ProjectItemView: React.FC<{
   project: Project
   onPress: (project: Project) => void
-}> = ({ project, onPress }) => {
+  selected: boolean
+}> = ({ project, onPress, selected }) => {
   return (
     <Pressable onPress={useCallback(() => onPress(project), [onPress, project])}>
-      <Card my={4}>
+      <Card my={4} style={selected? {backgroundColor:'#dbdbdb', borderColor:'#858585'}: null}>
         <Text typeface='default/14' color='default' mb={2}>
           {project.name}
         </Text>

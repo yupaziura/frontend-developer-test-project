@@ -11,10 +11,12 @@ import styles from './ProjectsListView.styles'
 export const ProjectsListView: React.FC<{
   projects: Project[]
   onProjectPress: (project: Project) => void
-}> = ({ projects, onProjectPress }) => {
+  selectedProjectIndex: number
+}> = ({ projects, onProjectPress, selectedProjectIndex }) => {
+
   const renderItem = useCallback(
-    ({ item }: { item: Project }) => <ProjectItemView project={item} onPress={onProjectPress} />,
-    []
+    ({ item, index }: { item: Project , index: number}) => <ProjectItemView selected={selectedProjectIndex === index ? true : false} project={item} onPress={onProjectPress} />,
+    [selectedProjectIndex]
   )
 
   return (
